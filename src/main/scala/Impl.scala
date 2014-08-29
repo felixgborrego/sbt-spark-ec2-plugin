@@ -27,9 +27,10 @@ private object Implementation {
     log.log(Level.Info, s"Launching job ${localConfig.classJob} inside $jar")
     ec2Manager.executeJob(jar.getAbsolutePath, localConfig.classJob, cluster).await
 
-    if (clusterConfig.autoStop) {
-      ec2Manager.destroy(localConfig)
-    }
+    //TODO
+    // if (clusterConfig.autoStop) {
+    //  ec2Manager.destroy(localConfig)
+    //}
   }
 
   implicit class AwaitableFuture[A](val f: Future[A]) extends AnyVal {
