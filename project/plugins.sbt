@@ -1,0 +1,1 @@
+libraryDependencies += "com.gilt" %% "lib-spark-manager" % "0.0.2"
