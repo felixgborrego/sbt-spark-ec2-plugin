@@ -12,16 +12,10 @@ execute spark-submit inside the master node.
 
 ## Usage
 
-This will create a slim jar (wihtout dependencies) and submit the jar to the Ec2 Spark cluster (setting up the cluster if it doesn't exist)
+This will create an assemlby jar and submit the jar to the Ec2 Spark cluster (setting up the cluster if it doesn't exist)
 
 ```scala
-sbt submitSparkJob
-```
-
-This will create a fat jar and submit the jar to the Ec2 Spark cluster (setting up the cluster if it doesn't exist)
-
-```scala
-sbt submitAssemblySparkJob
+sbt sparkLaunchCluster
 ```
 
 To make the plugin know what if your configuration you have to create a file spark.conf in your project root. With the 
