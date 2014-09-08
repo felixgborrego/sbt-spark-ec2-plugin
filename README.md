@@ -1,4 +1,4 @@
-Work in progress...
+![Build Status](https://travis-ci.org/felixgborrego/lib-spark-manager.svg?branch=master)
 
 ## Description
 
