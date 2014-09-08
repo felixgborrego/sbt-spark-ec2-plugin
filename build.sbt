@@ -23,6 +23,8 @@ resolvers += Resolver.url(
   url("http://dl.bintray.com/felixgborrego/repo"))(
     Resolver.ivyStylePatterns)
 
+resolvers += "JAnalyse Repository" at "http://www.janalyse.fr/repository/"
+
 
 libraryDependencies += "com.gilt" %% "lib-spark-manager" % "0.0.3.9"
 
