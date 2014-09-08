@@ -1,0 +1,19 @@
+language: scala
+script:
+- sbt -jvm-opts travis/jvmopts.build ++$TRAVIS_SCALA_VERSION clean test
+scala: 
+- 2.10.4
+notifications: 
+  email: fborrego@gilt.com
+jdk: 
+- oraclejdk7
+env: 
+  global: 
+  - secure: OP82g2CrWsB6yjwM3QAUjkbKLA26jh/sIFSyfhqPBNDwEwYMw0lSvtY4bnXFsXSax2alzpQcJjXYD46RMApcfUt5/dItkZLU+HTIcSDhByqbA1sFCSf5kMX+hWJpPAJk3oACnelbPW1aA9UdkdHr69LZSnRtbDYZEtZAIA0yAE4=
+  - secure: LzYGDXx0LbmSg34s+oWITzLv96mchUrYxnCvMnl5Es4WjMuB/tqmyXn0/FlPur+HKHRoi7WUtaNDJD9V1jpcqOO/lOJ09QKiYlS/D47s01yBDk0z74QRQpOmbGw0N5DoZ8tyG3y58FHOh+wI6MFRbVbR0iVoaCYklGWPwLicNGw=
+after_success:
+  - >
+      test "${TRAVIS_PULL_REQUEST}" = 'false' &&
+      test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
+      sh "$TRAVIS_BUILD_DIR/.travis-ci-bintray-credentials.sh" &&
+      sbt 'set version := version.value + "." + System.getenv("TRAVIS_BUILD_NUMBER")' publish
