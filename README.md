@@ -38,6 +38,8 @@ clusterNumWorkers=1
 
 ## Compile 
 
+It's not in any central repository yet so you'll need to compile and install this plugin and https://github.com/felixgborrego/lib-spark-manager on your own before using it. 
+
 sbt publish-local
 
 ## Roadmap
