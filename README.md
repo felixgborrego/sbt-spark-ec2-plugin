@@ -34,6 +34,8 @@ region = eu-west-1
 clusterNumMaster=1
 clusterNumWorkers=1
 #classJob=class name
+#stop the cluster after finish the job, by default false
+autoStop=true
 ```
 
 ## Compile 

@@ -27,10 +27,14 @@ private object Implementation {
     log.log(Level.Info, s"Launching job ${localConfig.classJob} inside $jar")
     ec2Manager.executeJob(jar.getAbsolutePath, localConfig.classJob, cluster).await
 
-    //TODO
-    // if (clusterConfig.autoStop) {
-    //  ec2Manager.destroy(localConfig)
-    //}
+
+    log.log(Level.Info, s"The job ${localConfig.classJob} is done!")
+    if (clusterConfig.autoStop) {
+      log.log(Level.Info, s"autoStop = true. Shut downing the cluster")
+      ec2Manager.destroy(localConfig)
+    } else {
+      log.log(Level.Info, s"autoStop = false, The cluster is still running")
+    }
   }
 
   implicit class AwaitableFuture[A](val f: Future[A]) extends AnyVal {
@@ -62,6 +66,7 @@ private object SparkConfig {
   val numMasters = properties.get("clusterNumMaster").map(_.toInt)
   val numWorkers = properties.get("clusterNumWorkers").map(_.toInt)
   val classJob = properties.get("classJob")
+  val autoStop = properties.get("autoStop").map(_.toString.toBoolean).getOrElse(false)
 
   def localConfig = (classJob, localSparkHome, keyPair, keyFile, awsAccessKeyId, awsSecretKey, region) match {
     case (Some(classJob), Some(localSparkHome), Some(keyPair), Some(keyFile), Some(awsAccessKeyId), Some(awsSecretKey), Some(region)) =>
@@ -72,7 +77,7 @@ private object SparkConfig {
 
   def clusterConfig = (numMasters, numWorkers) match {
     case (Some(numMasters), Some(numWorkers)) =>
-      ClusterConfig(new ClusterType(numMasters, numWorkers), true)
+      ClusterConfig(new ClusterType(numMasters, numWorkers), autoStop)
     case _ =>
       sys.error(s"Parameter are required. Define sparkClusterConfig in build.sbt or add required parameters to spark.conf")
   }
