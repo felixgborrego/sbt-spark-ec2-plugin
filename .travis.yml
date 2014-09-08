@@ -9,8 +9,8 @@ jdk:
 - oraclejdk7
 env: 
   global: 
-  - secure: OP82g2CrWsB6yjwM3QAUjkbKLA26jh/sIFSyfhqPBNDwEwYMw0lSvtY4bnXFsXSax2alzpQcJjXYD46RMApcfUt5/dItkZLU+HTIcSDhByqbA1sFCSf5kMX+hWJpPAJk3oACnelbPW1aA9UdkdHr69LZSnRtbDYZEtZAIA0yAE4=
-  - secure: LzYGDXx0LbmSg34s+oWITzLv96mchUrYxnCvMnl5Es4WjMuB/tqmyXn0/FlPur+HKHRoi7WUtaNDJD9V1jpcqOO/lOJ09QKiYlS/D47s01yBDk0z74QRQpOmbGw0N5DoZ8tyG3y58FHOh+wI6MFRbVbR0iVoaCYklGWPwLicNGw=
+  - secure: UeqQnJFrKWGVmmCMypWAThkjdXZCN17jHMfi6JZe1cb59hEZSo/LxcP0ZF+IYjUc3Qaj7o1sdlT4yqpoYNvAG7FLsjOOUPmHYenVpR6lJgHlmkU5cTQYPc1Em9k6XEpiuuNEdRg757TDMlzbz4MA5fZCE5rKpN6ZR5GTYHt97ws=
+  - secure: gfUWdGw0N7SHU6wRVnJmuYASx69Wz6aMOFHiTzmlPuVjqKu2om1ucv6L+YRUUuihm3VhN4JJkemGNi7x8VQrffIIq9aRGOn+esw7XwggIX09mwsQPOwrrZVifvgELb8CHUy+NnPAM8LTg3RIDfhUMwT6jOTyEgJlcjyVva2V9s0=
 after_success:
   - >
       test "${TRAVIS_PULL_REQUEST}" = 'false' &&
