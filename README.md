@@ -12,7 +12,7 @@ execute spark-submit inside the master node.
 
 ## Usage
 
-This will create an assemlby jar and submit the jar to the Ec2 Spark cluster (setting up the cluster if it doesn't exist)
+This will create an assembly jar and submit the jar to the Ec2 Spark cluster (setting up the cluster if it doesn't exist)
 
 ```scala
 sbt sparkLaunchCluster
@@ -21,7 +21,7 @@ sbt sparkLaunchCluster
 ![](https://raw2.github.com/felixgborrego/sbt-spark-ec2-plugin/master/docs/sbt-spark-ec2.gif)
 
 
-To make the plugin know what if your configuration you have to create a file spark.conf in your project root. With the 
+To make the plugin know about your configuration you have to create a file spark.conf in your project root. With the 
 following content:
 
 ```scala
