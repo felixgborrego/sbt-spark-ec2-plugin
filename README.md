@@ -2,7 +2,7 @@ sbt-spark-ec2-plugin
 ====================
 
 Sbt plugin to submit Spark jobs to a remote EC2 Spark Cluster.
-It allows you to create a cluster on demand and submit your task to a remote EC2 cluster from your local machine.
+It allows you to create a cluster on demand and submit your job to a remote EC2 cluster from your local machine.
 Unlike spark-submit, it allows you to deploy to a remote cluster. To do so, It copies the jar to the master node and 
 execute spark-submit inside the master node.
 
