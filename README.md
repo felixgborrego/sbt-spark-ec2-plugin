@@ -6,12 +6,10 @@ It allows you to create a cluster on demand and submit your task to a remote EC2
 Unlike spark-submit, it allows you to deploy to a remote cluster. To do so, It copies the jar to the master node and 
 execute spark-submit inside the master node.
 
-![Build Status](https://travis-ci.org/felixgborrego/lib-spark-manager.svg?branch=master)
-
-
 ![](https://raw2.github.com/felixgborrego/sbt-spark-ec2-plugin/master/docs/diagram.png)
 
 
+[![Build Status](https://travis-ci.org/felixgborrego/lib-spark-manager.svg?branch=master)](https://travis-ci.org/felixgborrego/lib-spark-manager)
 
 ## Usage
 
