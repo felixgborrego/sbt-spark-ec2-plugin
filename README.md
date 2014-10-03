@@ -68,7 +68,12 @@ addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.11.2")
 Then, add the following to your <project-root>/build.sbt (that's not project/build.sbt!) as a standalone line:
 
 ```scala
+import AssemblyKeys._
+import sbtassembly.Plugin.MergeStrategy
+
 sparkec2.Ec2SparkPluginSettings.sparkSettings
+
+assemblySettings
 ```
 
 To prevent having a too fat jar and avoid conflicts you can define a merge strategy as follow:
