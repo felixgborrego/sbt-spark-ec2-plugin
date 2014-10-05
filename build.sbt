@@ -26,7 +26,7 @@ resolvers += Resolver.url(
 resolvers += "JAnalyse Repository" at "http://www.janalyse.fr/repository/"
 
 
-libraryDependencies += "com.gilt" %% "lib-spark-manager" % "0.0.3.9"
+libraryDependencies += "com.gilt" %% "lib-spark-manager" % "0.0.4.10"
 
 publishMavenStyle := false
 
