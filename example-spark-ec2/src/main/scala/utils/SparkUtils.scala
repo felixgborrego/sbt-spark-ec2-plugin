@@ -12,8 +12,6 @@ object SparkUtils {
 
   def remoteSparkContext = {
     val conf = new SparkConf().setAppName("Remote Cluster")
-    .setMaster("spark://localhost:7777")
-
     new SparkContext(conf)
   }
 

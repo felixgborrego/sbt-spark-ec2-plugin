@@ -6,4 +6,4 @@ resolvers += Resolver.url(
 resolvers += "JAnalyse Repository" at "http://www.janalyse.fr/repository/"
 
 
-addSbtPlugin("com.gilt" % "sbt-spark-ec2-plugin" % "0.1.5")
+addSbtPlugin("com.gilt" % "sbt-spark-ec2-plugin" % "0.1.14")
