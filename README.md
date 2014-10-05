@@ -52,13 +52,28 @@ resolvers += Resolver.url(
   url("http://dl.bintray.com/felixgborrego/repo"))(
     Resolver.ivyStylePatterns)
 
+resolvers += "JAnalyse Repository" at "http://www.janalyse.fr/repository/"
+
 addSbtPlugin("com.gilt" % "sbt-spark-ec2-plugin" % "0.1.5")
 ```
+
+
+Include the assembly plugin project/assembly.sbt
+
+```scala
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.11.2")
+```
+
 
 Then, add the following to your <project-root>/build.sbt (that's not project/build.sbt!) as a standalone line:
 
 ```scala
+import AssemblyKeys._
+import sbtassembly.Plugin.MergeStrategy
+
 sparkec2.Ec2SparkPluginSettings.sparkSettings
+
+assemblySettings
 ```
 
 To prevent having a too fat jar and avoid conflicts you can define a merge strategy as follow:
