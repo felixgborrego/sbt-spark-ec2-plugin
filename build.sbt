@@ -9,7 +9,7 @@ scalaVersion := "2.10.4"
 
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.11.2")
 
-libraryDependencies += "com.fgb" %% "lib-spark-manager" % "0.0.5.11"
+libraryDependencies += "com.fgb" %% "lib-spark-manager" % "0.0.5.12"
 libraryDependencies ++= Seq(
   "org.mockito"             %  "mockito-all"              % "1.9.5"          % "test",
   "org.specs2"              %% "specs2"                   % "2.4.1"          % "test"
