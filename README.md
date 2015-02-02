@@ -7,7 +7,7 @@ It allows you to create a cluster on demand and submit your task to a remote EC2
 Unlike spark-submit, it allows you to deploy to a remote cluster. To do so, it setup the cluster using Amazon EMR, and submit the job as an
  custom EMR step.
 
- ![](https://raw2.github.com/felixgborrego/sbt-spark-ec2-plugin/master/docs/diagram.png)
+ ![](https://raw.githubusercontent.com/felixgborrego/sbt-spark-ec2-plugin/master/docs/sbt-spark-ec2.gif)
 
 
 ## Usage
