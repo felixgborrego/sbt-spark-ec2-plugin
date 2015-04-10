@@ -9,6 +9,7 @@ Unlike spark-submit, it allows you to deploy to a remote cluster. To do so, it s
 
  ![](https://raw.githubusercontent.com/felixgborrego/sbt-spark-ec2-plugin/master/docs/sbt-spark-ec2.gif)
 
+WARNING: This lib is in an early stage. Do not use this with any expectation of stability, what is here is just an experiment over the weekend, and would need more work to reach a point where it could be used as a base for anything else.
 
 ## Usage
 
